@@ -4,6 +4,7 @@ def no_c(my_string):
     for x in my_string:
         if x == 'c' or x == 'C':
             continue
-        new_string += x
+        else:
+            new_string += x
     return new_string
 
