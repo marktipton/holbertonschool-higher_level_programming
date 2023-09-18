@@ -2,30 +2,37 @@ Tests for matrix_divided function:
 
 >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
 
-negative number:
-        >>> matrix divided(4,-2)
-        2
+even numbers:
+        >>> matrix = [[4, 6, 10], [12, 14, 16]]
+        >>> matrix_divided(matrix, 2)
+        [[4.0, 6.0, 10.0], [12.0, 14.0, 16.0]]
 
-zero:
-        >>> add_integer(0,0)
-        0
+div negative:
+        >>> matrix = [[4, 6, 10], [12, 14, 16]]
+        >>> matrix_divided(matrix, -2)
+        [[-4.0, -6.0, -10.0], [-12.0, -14.0, -16.0]]
 
 float:
-        >>> add_integer(3, 2.8)
-        5
+        >>> matrix = [[4.6, 8.2, 10.6], [12.95, 14.2, 16.1]]
+        >>> matrix_divided(matrix, 2)
+        [[2.3, 4.1, 5.3], [6.43, 7.1, 8.05]]
 
-one arg:
-        >>> add_integer(3)
-        101
+div zero:
+	>>> matrix = [[4, 6, 10], [12, 14, 16]]
+        >>> matrix_divided(matrix, 0)
+        division by zero
+        
+div NaN:
+        >>> matrix = [[4, 6, 10], [12, 14, 16]]
+        >>> matrix_divided(matrix, "NaN")
+        div must be a number
 
-no arg:
-        >>> add_integer()
+NaN matrix:
+        >>> matrix = [[4, "string", 10], [12, 14, 16]]
+        >>> matrix_divided(matrix, 2)
+        matrix must be a matrix (list of lists) of integers/floats
 
-
-negative output:
-        >>> add_integer(-100)
-        -2
-
-string input:
-        >>> add_integer("hello?", 2)
-        a must be an integer
+row different size:
+        >>> matrix = [[4, 8], [12, 14, 16]]
+        >>> matrix_divided(matrix, 2)
+        Each row of the matrix must have the same size
