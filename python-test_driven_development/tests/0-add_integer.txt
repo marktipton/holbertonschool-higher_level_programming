@@ -1,5 +1,7 @@
 Tests for add_integers function:
 
+>>> add_integer = __import__("0-add_integer").add_integer
+
 negative number:
 	>>> add_integer(4,-2)
 	2
@@ -18,8 +20,12 @@ one arg:
 
 no arg:
 	>>> add_integer()
+	
 
 negative output:
 	>>> add_integer(-100)
 	-2
-	
+
+string input:
+	>>> add_integer("hello?", 2)
+	a must be an integer	
