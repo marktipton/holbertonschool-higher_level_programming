@@ -17,6 +17,6 @@ def matrix_divided(matrix, div):
             if not isinstance(element, (float, int)):
                     raise TypeError(""""
 matrix must be a matrix (list of lists) of integers/floats""")
-            divided_row.appenid(round(element / div, 2))
+            divided_row.append(round(element / div, 2))
         divided_matrix.append(divided_row)
     return divided_matrix
