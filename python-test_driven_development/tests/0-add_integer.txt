@@ -4,11 +4,22 @@ negative number:
 	>>> add_integer(4,-2)
 	2
 
->>> add_integer(0,0)
-0
+zero:
+	>>> add_integer(0,0)
+	0
 
->>> add_integer(3, 2.8)
-5
+float:
+	>>> add_integer(3, 2.8)
+	5
 
->>> add_integer(3)
-101
+one arg:
+	>>> add_integer(3)
+	101
+
+no arg:
+	>>> add_integer()
+
+negative output:
+	>>> add_integer(-100)
+	-2
+	
