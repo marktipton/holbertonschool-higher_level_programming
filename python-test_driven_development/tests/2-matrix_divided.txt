@@ -1,0 +1,31 @@
+Tests for matrix_divided function:
+
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+negative number:
+        >>> matrix divided(4,-2)
+        2
+
+zero:
+        >>> add_integer(0,0)
+        0
+
+float:
+        >>> add_integer(3, 2.8)
+        5
+
+one arg:
+        >>> add_integer(3)
+        101
+
+no arg:
+        >>> add_integer()
+
+
+negative output:
+        >>> add_integer(-100)
+        -2
+
+string input:
+        >>> add_integer("hello?", 2)
+        a must be an integer
