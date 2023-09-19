@@ -1,31 +1,16 @@
-Tests for add_integers function:
+Tests for text_indentation function:
 
->>> add_integer = __import__("0-add_integer").add_integer
+>>> text_indentation = __import__("5-text_indentation").text_indentation
 
-negative number:
-        >>> add_integer(4,-2)
-        2
+text not a string:
+	>>> text_indentation(7)
+	text must be a string
 
-zero:
-        >>> add_integer(0,0)
-        0
-
-float:
-        >>> add_integer(3, 2.8)
-        5
-
-one arg:
-        >>> add_integer(3)
-        101
-
-no arg:
-        >>> add_integer()
+text is a string:
+	>>> text_indentation("Ello: Guvna?")
+	Ello:
 
 
-negative output:
-        >>> add_integer(-100)
-        -2
+	Guvna?
 
-string input:
-        >>> add_integer("hello?", 2)
-        a must be an integer
+
