@@ -20,6 +20,9 @@ one arg:
 
 no arg:
 	>>> add_integer()
+	Traceback (most recent call last):
+		...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
 	
 
 negative output:
@@ -28,4 +31,6 @@ negative output:
 
 string input:
 	>>> add_integer("hello?", 2)
-	a must be an integer	
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer	
