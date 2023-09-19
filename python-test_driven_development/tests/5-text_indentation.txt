@@ -7,10 +7,15 @@ text not a string:
 	text must be a string
 
 text is a string:
-	>>> text_indentation("Ello: Guvna?")
-	Ello:
+	>>> text_indentation("Hello World")
+	Hello World
 
+Space after special character:
+	>>> text_indentation("Hello? World")
+	Hello?
+	World
 
-	Guvna?
-
-
+No space after special character:
+	>>> text_indentation("Hello.World")
+	Hello?
+	Wolrd
