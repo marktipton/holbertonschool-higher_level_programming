@@ -1,0 +1,15 @@
+Tests for add_integers function:
+
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+first name not string:
+        >>> say_my_name(4,Morales)
+        first_mame must be a string
+
+last name not string:
+        >>> add_integer(Miles,0)
+        last name must be a string
+
+float:
+        >>> add_integer(3, 2.8)
+        5
