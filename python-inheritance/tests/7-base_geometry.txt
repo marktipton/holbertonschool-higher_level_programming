@@ -18,70 +18,75 @@ valid input:
 	>>> geometry.integer_validator("side_length", 5)
 
 string:
-
-	>>> BaseGeometry.integer_validator("string", "not integer")
+	>>> geometry = BaseGeometry()
+	>>> geometry.integer_validator("name", "not integer")
 	Traceback (most recent call last):
 	...
-	TypeError: integer_validator() missing 1 required positional argument: 'value'
+	TypeError: name must be an integer
 
 negative integer:
-
-	>>> BaseGeometry.integer_validator("side_length", -7)
+	       
+	>>> geometry = BaseGeometry()
+	>>> geometry.integer_validator("side_length", -7)
 	Traceback (most recent call last):
 	...
-	TypeError: integer_validator() missing 1 required positional argument: 'value'
+	ValueError: side_length must be greater than 0
 
 input None:
-
-	>>> BaseGeometry.integer_validator("side_length", None)
+	
+        >>> geometry = BaseGeometry()
+	>>> geometry.integer_validator("side_length", None)
 	Traceback (most recent call last):
 		...
-	TypeError: integer_validator() missing 1 required positional argument: 'value'
+	TypeError: side_length must be an integer
 
 bool:
 		
-	>>> BaseGeometry.integer_validator("bool", False)
+        >>> geometry = BaseGeometry()
+	>>> geometry.integer_validator("bool", False)
 	Traceback (most recent call last):
                 ...
-        TypeError: integer_validator() missing 1 required positional argument: 'value'
+        TypeError: bool must be an integer
 
 tuple:
 
-        >>> BaseGeometry.integer_validator("tuple", (50, 78))
+        >>> geometry = BaseGeometry()
+        >>> geometry.integer_validator("tuple", (50, 78))
         Traceback (most recent call last):
                 ...
-        TypeError: integer_validator() missing 1 required positional argument: 'value'
+        TypeError: tuple must be an integer
 
 list:
 
-        >>> BaseGeometry.integer_validator("list", [1, 2, 3])
+        >>> geometry = BaseGeometry()
+        >>> geometry.integer_validator("list", [1, 2, 3])
         Traceback (most recent call last):
                 ...
-        TypeError: integer_validator() missing 1 required positional argument: 'value'
+        TypeError: list must be an integer
 
 set:
 
-        >>> BaseGeometry.integer_validator("set", {"un", "du", "twa"})
+        >>> geometry = BaseGeometry()
+        >>> geometry.integer_validator("set", {"un", "du", "twa"})
         Traceback (most recent call last):
                 ...
-        TypeError: integer_validator() missing 1 required positional argument: 'value'
+        TypeError: set must be an integer
 
 no args:
         
-	>>> BaseGeometry.integer_validator()
+        >>> geometry = BaseGeometry()
+	>>> geometry.integer_validator()
         Traceback (most recent call last):
                 ...
-        TypeError: integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
+        TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 
 too many args:
 
-	>>> BaseGeometry.integer_validator("side_length", 50, 85, 26)
+	>>> geometry = BaseGeometry()
+	>>> geometry.integer_validator(50, 85, 26)
 	Traceback (most recent call last):
 		...
 	TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
-3 args:
-	
-	>>> BaseGeometry.integer_validator("side_length", 50, 85)
 
