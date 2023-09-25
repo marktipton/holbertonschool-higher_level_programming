@@ -5,22 +5,22 @@ Tests for print_sorted function:
 
 already sorted:
 
-	>>> MyList([1, 2, 3, 4])
+	>>> MyList.print_sorted([1, 2, 3, 4])
 	[1, 2, 3, 4]
 
 one element unsorted:
 
-	>>> MyList([1, 2, 4, 3])
+	>>> MyList.print_sorted([1, 2, 4, 3])
 	[1, 2, 3, 4]
 
 negative elements:
 
-        >>> MyList([-1, -2, -4, -3])
+        >>> MyList.print_sorted([-1, -2, -4, -3])
         [-4, -3, -2, -1]
 
 
 empty list:
 
-        >>> MyList([])
+        >>> MyList.print_sorted([])
 	[]
 
