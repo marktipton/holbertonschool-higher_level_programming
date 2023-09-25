@@ -89,4 +89,11 @@ too many args:
 		...
 	TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
+zero:
+
+        >>> geometry = BaseGeometry()
+        >>> geometry.integer_validator("side_length", -7)
+        Traceback (most recent call last):
+        ...
+        ValueError: side_length must be greater than 0
 
