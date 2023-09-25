@@ -17,9 +17,9 @@ valid input:
 	>>> geometry = BaseGeometry()
 	>>> geometry.integer_validator("side_length", 5)
 
-Non-integer:
+string:
 
-	>>> BaseGeometry.integer_validator("side_length", "not integer")
+	>>> BaseGeometry.integer_validator("string", "not integer")
 	Traceback (most recent call last):
 	...
 	TypeError: integer_validator() missing 1 required positional argument: 'value'
@@ -37,3 +37,33 @@ input None:
 	Traceback (most recent call last):
 		...
 	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+bool:
+		
+	>>> BaseGeometry.integer_validator("bool", False)
+	Traceback (most recent call last):
+                ...
+        TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+tuple:
+
+        >>> BaseGeometry.integer_validator("tuple", (50, 78))
+        Traceback (most recent call last):
+                ...
+        TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+list:
+
+        >>> BaseGeometry.integer_validator("list", [1, 2, 3])
+        Traceback (most recent call last):
+                ...
+        TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+set:
+
+        >>> BaseGeometry.integer_validator("set", {"un", "du", "twa"})
+        Traceback (most recent call last):
+                ...
+        TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
