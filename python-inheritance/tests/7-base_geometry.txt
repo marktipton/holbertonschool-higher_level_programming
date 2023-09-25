@@ -30,3 +30,10 @@ negative integer:
 	Traceback (most recent call last):
 	...
 	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+input None:
+
+	>>> BaseGeometry.integer_validator("side_length", None)
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
