@@ -66,4 +66,22 @@ set:
                 ...
         TypeError: integer_validator() missing 1 required positional argument: 'value'
 
+no args:
+        
+	>>> BaseGeometry.integer_validator()
+        Traceback (most recent call last):
+                ...
+        TypeError: integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
+
+
+too many args:
+
+	>>> BaseGeometry.integer_validator("side_length", 50, 85, 26)
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+3 args:
+	
+	>>> BaseGeometry.integer_validator("side_length", 50, 85)
 
