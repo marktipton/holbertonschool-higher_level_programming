@@ -24,3 +24,10 @@ empty list:
         >>> MyList.print_sorted([])
 	[]
 
+list is not list:
+	
+	>>> MyList.print_sorted(2, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: print_sorted() takes 1 positional argument but 2 were given
+
