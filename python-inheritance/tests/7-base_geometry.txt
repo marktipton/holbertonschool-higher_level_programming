@@ -3,23 +3,30 @@ Tests for print_sorted function:
 ==============================================================
 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
-already sorted:
+>>> geometry = BaseGeometry()
+	
+test not implemented:
 
-        >>> MyList.print_sorted([1, 2, 3, 4])
-        [1, 2, 3, 4]
+	>>> geometry.area()
+	Traceback (most recent call last):
+	...
+	Exception: area() is not implemented
 
-one element unsorted:
+valid input:
 
-        >>> MyList.print_sorted([1, 2, 4, 3])
-        [1, 2, 3, 4]
+	>>> geometry = BaseGeometry()
+	>>> geometry.integer_validator("side_length", 5)
 
-negative elements:
+Non-integer:
 
-        >>> MyList.print_sorted([-1, -2, -4, -3])
-        [-4, -3, -2, -1]
+	>>> BaseGeometry.integer_validator("side_length", "not integer")
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
 
+negative integer:
 
-empty list:
-
-        >>> MyList.print_sorted([])
-        []
+	>>> BaseGeometry.integer_validator("side_length", -7)
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
