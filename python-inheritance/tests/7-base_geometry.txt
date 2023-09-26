@@ -92,7 +92,7 @@ too many args:
 zero:
 
         >>> geometry = BaseGeometry()
-        >>> geometry.integer_validator("side_length", -7)
+        >>> geometry.integer_validator("side_length", 0)
         Traceback (most recent call last):
         ...
         ValueError: side_length must be greater than 0
@@ -112,4 +112,5 @@ float:
         Traceback (most recent call last):
                 ...
         TypeError: float must be an integer
+
 
