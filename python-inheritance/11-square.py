@@ -13,5 +13,4 @@ class Square(Rectangle):
 
     def __str__(self):
         """unofficial string representation of square"""
-        return f"[Square] {self.__width}/{self.__height}"
-
+        return f"[Square] {width}/{height}"
