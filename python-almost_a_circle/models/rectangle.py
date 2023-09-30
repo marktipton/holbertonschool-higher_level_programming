@@ -80,7 +80,7 @@ class Rectangle(Base):
             f"{self.width}/{self.height}"
         )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """assigns an arg to each rectangle attribute"""
         if len(args) >= 1:
             setattr(self, 'id', args[0])
@@ -92,3 +92,5 @@ class Rectangle(Base):
             setattr(self, 'x', args[3])
         if len(args) >= 5:
             setattr(self, 'y', args[4])
+        for key, value in kwargs.items():
+            setattr(self, key, value)
