@@ -82,8 +82,13 @@ class Rectangle(Base):
 
     def update(self, *args):
         """assigns an arg to each rectangle attribute"""
-        setattr(self, 'id', args[0])
-        setattr(self, 'width', args[1])
-        setattr(self, 'height', args[2])
-        setattr(self, 'x', args[3])
-        setattr(self, 'y', args[4])
+        if len(args) >= 1:
+            setattr(self, 'id', args[0])
+        if len(args) >= 2:
+            setattr(self, 'width', args[1])
+        if len(args) >= 3:
+            setattr(self, 'height', args[2])
+        if len(args) >= 4:
+            setattr(self, 'x', args[3])
+        if len(args) >= 5:
+            setattr(self, 'y', args[4])
