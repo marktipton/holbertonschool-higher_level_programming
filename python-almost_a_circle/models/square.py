@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Creates rectangle class which inherits from base"""
+"""Creates square class which inherits from rectangle"""
 
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """rectangle class child of base"""
+    """square class child of rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
-        super().__init__(id, x, y, width=size, height=size)
+        super().__init__(width=size, height=size, x, y, id)
