@@ -41,3 +41,8 @@ class Base:
             return []
         dictionary_rep = json.loads(json_string)
         return dictionary_rep
+
+    @classmethod
+    def create(cls, **dictionary):
+        """create dummy instance"""
+        cls(8, 10, 3, 3)
