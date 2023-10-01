@@ -28,8 +28,7 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
-        def update(self, *args, **kwargs):
-        """assigns an arg to each rectangle attribute"""
+        """assigns an arg to each square attribute"""
         if len(args) >= 1:
             setattr(self, 'id', args[0])
         if len(args) >= 2:
