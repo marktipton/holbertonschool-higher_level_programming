@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Manages id attribute for subclasses"""
 
+import json
 
 class Base:
     """Parent class for shapes"""
@@ -12,3 +13,10 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """static method to list dictionary rep of objects"""
+        if list_dictionaries is None:
+            return "[]"
+        return json.dump(list_dictionaries)
