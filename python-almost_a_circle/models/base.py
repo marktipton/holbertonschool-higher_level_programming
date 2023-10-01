@@ -3,6 +3,7 @@
 
 import json
 
+
 class Base:
     """Parent class for shapes"""
     __nb_objects = 0
@@ -19,4 +20,4 @@ class Base:
         """static method to list dictionary rep of objects"""
         if list_dictionaries is None:
             return "[]"
-        return json.dump(list_dictionaries)
+        return json.dumps(list_dictionaries)
