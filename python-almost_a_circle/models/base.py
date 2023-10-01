@@ -38,6 +38,6 @@ class Base:
     def from_json_string(json_string):
         """converts json string to Python dictionary"""
         if json_string is None or len(json_string) == 0:
-            return "[]"
+            return []
         dictionary_rep = json.loads(json_string)
         return dictionary_rep
