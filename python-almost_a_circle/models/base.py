@@ -45,4 +45,11 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """create dummy instance"""
-        cls(8, 10, 3, 3)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(8, 10)
+        if cls.__name__ == "Square":
+            dummy = cls(8)
+
+    @classmethod
+    def load_from_file(cls):
+        """returns list of instances of class"""
