@@ -49,6 +49,8 @@ class Base:
             dummy = cls(8, 10)
         if cls.__name__ == "Square":
             dummy = cls(8)
+        dummy.update(**dictionary)
+        return dummy
 
     @classmethod
     def load_from_file(cls):
