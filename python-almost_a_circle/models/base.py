@@ -64,7 +64,6 @@ class Base:
             return []
 
         json_list = cls.from_json_string(json_string)
-        for obj in json_list:
-            instances = cls.create(**obj)
+        instances = cls.create(**obj) for obj in json_list
 
         return instances
