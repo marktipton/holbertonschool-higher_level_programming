@@ -83,11 +83,6 @@ class TestRectangle(unittest.TestCase):
             Square(0, 1, 1, 45)
 
 
-class Test_update(unittest.TestCase):
-    """test update method for square"""
-    pass
-
-
 class Test_to_dictionary(unittest.TestCase):
     """test to_dictionary method for square"""
     pass
@@ -101,3 +96,16 @@ class Test_display(unittest.TestCase):
         with patch("sys.stdout", new=io.StringIO()) as check:
             self.s.display()
             self.assertEqual(check.getvalue(), "##\n##\n")
+
+class Test_update(unittest.TestCase):
+    """test update method for square"""
+    def setUp(self):
+        self.s = Rectangle(2, 3, 1, 45)
+        self.s.update(1)
+        self.assertEqual(self.s.id, 1)
+        self.s.update(1, 3)
+        self.assertEqual(self.s.size, 3)
+        self.s.update(1, 3, 5)
+        self.assertEqual(self.s.x, 5)
+        self.s.update(1, 3, 5, 7)
+        self.assertEqual(self.s.y, 7)
