@@ -90,7 +90,11 @@ class TestRectangle(unittest.TestCase):
 
 class Test_area(unittest.TestCase):
     """test area method"""
-    pass
+    def setUp(self):
+        self.r = Rectangle(2, 3, 1, 1, 45)
+
+    def test_area(self):
+        self.assertEqual(Rectangle(2, 3).area(), 6)
 
 
 class Test_display(unittest.TestCase):
