@@ -30,9 +30,11 @@ class TestRectangle(unittest.TestCase):
         self.s.y = 3
         self.assertEqual(self.s.y, 3)
 
+
 class Test_update(unittest.TestCase):
     """test update method for square"""
     pass
+
 
 class Test_to_dictionary(unittest.TestCase):
     """test to_dictionary method for square"""
