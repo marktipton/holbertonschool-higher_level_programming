@@ -32,43 +32,53 @@ class TestRectangle(unittest.TestCase):
 
     def test_width_nonint(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            self.s.size = "s"
+            self.s.width = "s"
+            Square("s", 1, 1, 45)
 
     def test_height_nonint(self):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             self.s.height = [2, 3]
+            Square([2, 3], 1, 1, 45)
 
     def test_x_nonint(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             self.s.x = {2, 20}
+            Square(2, {2, 20}, 1, 45)
 
     def test_y_nonint(self):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             self.s.y = (8, 12)
+            Square(2, 1, (8, 12), 45)
 
     def test_width_neg(self):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             self.s.width = -1
+            Square(-1, 1, 1, 45)
 
     def test_height_neg(self):
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             self.s.height = -4
+            Square(-4, 1, 1, 45)
 
     def test_x_neg(self):
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             self.s.x = -345
+            Square(2, -345, 1, 45)
 
     def test_y_neg(self):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             self.s.y = -60
+            Square(2, 1, -60, 45)
 
     def test_width_zero(self):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             self.s.width = 0
+            Square(0, 1, 1, 45)
 
     def test_height_zero(self):
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             self.s.height = 0
+            Square(0, 1, 1, 45)
 
 
 class Test_update(unittest.TestCase):
