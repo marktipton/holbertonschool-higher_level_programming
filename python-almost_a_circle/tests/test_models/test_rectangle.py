@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """unittest for base"""
 import unittest
+from unittest.mock import patch
+import io
 from models.rectangle import Rectangle
 
 
@@ -99,7 +101,13 @@ class Test_area(unittest.TestCase):
 
 class Test_display(unittest.TestCase):
     """test diplay method"""
-    pass
+    def setUp(self):
+        self.r = Rectangle(2, 2, 0, 0, 50)
+
+    def test_display(self):
+        with patch("sys.stdout", new=io.StringIO()) as check:
+            self.r.display()
+            self.assertEqual(check.getvalue(), "##\n##\n")
 
 
 class Test_update(unittest.TestCase):
