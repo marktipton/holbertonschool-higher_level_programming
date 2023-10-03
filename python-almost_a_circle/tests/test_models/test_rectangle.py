@@ -130,3 +130,8 @@ class Test_to_dictionary(unittest.TestCase):
     """test to_dictionary method"""
     def setUp(self):
         self.r = Rectangle(2, 3, 1, 1, 45)
+    def test_dictionary(self):
+        self.assertEqual(
+            self.r.to_dictionary(),
+            {'id': 45, 'width': 2, 'height': 3, 'x': 1, 'y': 1}
+        )

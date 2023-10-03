@@ -84,8 +84,14 @@ class TestRectangle(unittest.TestCase):
 
 
 class Test_to_dictionary(unittest.TestCase):
-    """test to_dictionary method for square"""
-    pass
+    """test to_dictionary method"""
+    def setUp(self):
+        self.s = Square(2, 1, 1, 45)
+    def test_dictionary(self):
+        self.assertEqual(
+            self.s.to_dictionary(),
+            {'id': 45, 'size': 2, 'x': 1, 'y': 1}
+        )
 
 class Test_display(unittest.TestCase):
     """test diplay method"""
@@ -100,7 +106,7 @@ class Test_display(unittest.TestCase):
 class Test_update(unittest.TestCase):
     """test update method for square"""
     def setUp(self):
-        self.s = Rectangle(2, 3, 1, 45)
+        self.s = Square(2, 3, 1, 45)
         self.s.update(1)
         self.assertEqual(self.s.id, 1)
         self.s.update(1, 3)
