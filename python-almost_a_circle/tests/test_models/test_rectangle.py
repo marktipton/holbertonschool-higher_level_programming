@@ -37,6 +37,45 @@ class TestRectangle(unittest.TestCase):
         self.r.y = 3
         self.assertEqual(self.r.y, 3)
 
+    def test_width_nonint(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            self.r.width = "s"
+
+    def test_height_nonint(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            self.r.height = [2, 3]
+
+    def test_x_nonint(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            self.r.x = {2, 20}
+
+    def test_y_nonint(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            self.r.y = (8, 12)
+
+    def test_width_neg(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            self.r.width = -1
+
+    def test_height_neg(self):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            self.r.height = -4
+
+    def test_x_neg(self):
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            self.r.x = -345
+
+    def test_y_neg(self):
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            self.r.y = -60
+
+    def test_width_zero(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            self.r.width = 0
+
+    def test_height_zero(self):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            self.r.height = 0
 
 class Test_area(unittest.TestCase):
     """test area method"""
