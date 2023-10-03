@@ -14,8 +14,15 @@ class TestBase(unittest.TestCase):
 
 class Test_to_json_string(unittest.TestCase):
     """test for to_json_string method"""
-    pass
+    def test_empty(self):
+        self.assertEqual(Base.to_json_string([]), '[]')
 
+    def test_none(self):
+        self.assertEqual(Base.to_json_string(None), '[]')
+
+    def test_dictionary(self):
+        test_dict = {'width': 1, 'height': 3, 'x': 5, 'y':7, 'id': 9}
+        self.assertTrue(type(Base.to_json_string(test_dict) is str))
 
 class Test_save_to_file(unittest.TestCase):
     """test for to_json_string method"""
@@ -24,7 +31,9 @@ class Test_save_to_file(unittest.TestCase):
 
 class Test_from_json_string(unittest.TestCase):
     """test for to_json_string method"""
-    pass
+    def test_empty(self):
+        self.assertEqual(Base.from_json_string(None), [])
+        self.assertEqual(Base.from_json_string([]), [])
 
 
 class Test_Create(unittest.TestCase):
