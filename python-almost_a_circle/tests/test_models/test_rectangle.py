@@ -112,9 +112,21 @@ class Test_display(unittest.TestCase):
 
 class Test_update(unittest.TestCase):
     """test update method"""
-    pass
+    def setUp(self):
+        self.r = Rectangle(2, 3, 1, 1, 45)
+        self.r.update(1)
+        self.assertEqual(self.r.id, 1)
+        self.r.update(1, 3)
+        self.assertEqual(self.r.width, 3)
+        self.r.update(1, 3, 5)
+        self.assertEqual(self.r.height, 5)
+        self.r.update(1, 3, 5, 7)
+        self.assertEqual(self.r.x, 7)
+        self.r.update(1, 3, 5, 7, 9)
+        self.assertEqual(self.r.y, 9)
 
 
 class Test_to_dictionary(unittest.TestCase):
     """test to_dictionary method"""
-    pass
+    def setUp(self):
+        self.r = Rectangle(2, 3, 1, 1, 45)

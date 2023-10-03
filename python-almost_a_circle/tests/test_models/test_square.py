@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """unittest for base"""
 import unittest
+from unittest.mock import patch
+import io
 from models.square import Square
 
 
@@ -89,3 +91,13 @@ class Test_update(unittest.TestCase):
 class Test_to_dictionary(unittest.TestCase):
     """test to_dictionary method for square"""
     pass
+
+class Test_display(unittest.TestCase):
+    """test diplay method"""
+    def setUp(self):
+        self.s = Square(2, 0, 0, 50)
+
+    def test_display(self):
+        with patch("sys.stdout", new=io.StringIO()) as check:
+            self.s.display()
+            self.assertEqual(check.getvalue(), "##\n##\n")
