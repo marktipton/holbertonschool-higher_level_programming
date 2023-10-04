@@ -115,3 +115,7 @@ class Test_update(unittest.TestCase):
         self.assertEqual(self.s.x, 5)
         self.s.update(1, 3, 5, 7)
         self.assertEqual(self.s.y, 7)
+
+
+if __name__ == "__main__":
+    unittest.main()

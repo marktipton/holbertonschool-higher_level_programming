@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """unittest for base"""
 import unittest
+import json
 from models.base import Base
 
 
@@ -10,6 +11,18 @@ class TestBase(unittest.TestCase):
         invalid_id = -1
         with self.assertRaises(ValueError):
             instance = Base(invalid_id)
+
+    def test_id_input(self):
+        obj1 = Base(23)
+        self.assertEqual(obj1.id, 23)
+
+    def test_float_id(self):
+        obj = Base(2.718)
+        self.assertEqual(2.718, obj.id)
+
+    def test_too_many_args(self):
+        with self.assertRaises(TypeError):
+            Base(1, 2)
 
 
 class Test_to_json_string(unittest.TestCase):
@@ -44,3 +57,6 @@ class Test_Create(unittest.TestCase):
 class Test_load_from_file(unittest.TestCase):
     """test for to_json_string method"""
     pass
+
+if __name__ == "__main__":
+    unittest.main()

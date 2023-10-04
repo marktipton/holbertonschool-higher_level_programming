@@ -135,3 +135,7 @@ class Test_to_dictionary(unittest.TestCase):
             self.r.to_dictionary(),
             {'id': 45, 'width': 2, 'height': 3, 'x': 1, 'y': 1}
         )
+
+
+if __name__ == "__main__":
+    unittest.main()
