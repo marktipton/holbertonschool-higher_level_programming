@@ -2,6 +2,6 @@
 USE hbtn_0d_usa;
 SET @California_state_id = (SELECT id FROM states WHERE name = 'California');
 
-SELECT * FROM cities
+SELECT name FROM cities
 WHERE state_id = @California_state_id
 ORDER BY cities.id;
