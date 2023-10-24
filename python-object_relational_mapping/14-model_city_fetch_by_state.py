@@ -19,9 +19,9 @@ def list_states(username, password, database_name):
 
     session = Session()
 
-    cities = session.query(City).order_by(City.id)
+    cities_states = session.query(City, State).join(State)
 
-    for city in cities:
+    for city, state in cities_states:
         print(f"{state.name}: ({city.id}) {city.name}")
 
     session.close()
