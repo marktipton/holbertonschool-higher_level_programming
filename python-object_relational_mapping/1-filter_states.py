@@ -5,10 +5,15 @@
 import MySQLdb
 import sys
 
-def list_states_N(username, password, database_name, host, port):
+def list_states_N(username, password, database_name):
     """list states in hbtn_0e_0_usa database"""
-    db = MySQLdb.connect(host=host, port=port, user=username, passwd=password,
-    db=database_name)
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=username,
+        passwd=password,
+        db=database_name
+    )
 
     cursor = db.cursor()
     # Execute SQL Query
@@ -16,7 +21,7 @@ def list_states_N(username, password, database_name, host, port):
         SELECT *
         FROM states
         WHERE name LIKE 'N%'
-        ORDER BY states.id
+        ORDER BY id
     """)
 
     results = cursor.fetchall()
@@ -31,6 +36,4 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
-    host = 'localhost'
-    port = 3306
-    list_states(username, password, database_name, host, port)
+    list_states(username, password, database_name)
