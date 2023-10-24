@@ -24,8 +24,12 @@ def list_states(username, password, database_name):
     for state in states_delete:
         session.delete(state)
 
-    session.close()
+    session.commit()
 
+    remaining_states = session.query(State).all()
+
+    for state in remaining_states:
+        print(f"{state.id}: {state.name}")
 
 if __name__ == "__main__":
     username = sys.argv[1]
