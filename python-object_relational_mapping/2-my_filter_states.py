@@ -22,7 +22,7 @@ def list_states_Match(username, password, database_name, state_searched):
     cursor.execute("""
         SELECT *
         FROM states
-        WHERE name = %s
+        WHERE name LIKE %s
         ORDER BY states.id
     """, (state_searched,))
 
