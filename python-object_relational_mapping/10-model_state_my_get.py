@@ -19,13 +19,13 @@ def list_states(username, password, database_name, state_searched):
     session = Session()
 
     state = session.query(State)\
-                    .filter(State.name == state_searched)\
-                    .first()
+        .filter(State.name == state_searched)\
+        .first()
 
     if state:
         print(state.id)
     else:
-        print("Not Found")
+        print("Not found")
 
     session.close()
 
