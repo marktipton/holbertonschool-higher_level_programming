@@ -41,4 +41,5 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
+    state_name = sys.argv[4]
     list_cities(username, password, database_name, state_name)
