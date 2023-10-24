@@ -22,9 +22,9 @@ def list_states_Match(username, password, database_name, state_searched):
     cursor.execute("""
         SELECT *
         FROM states
-        WHERE name LIKE %s
+        WHERE name LIKE '{}'
         ORDER BY states.id
-    """, (state_searched,))
+    """.format(state_searched))
 
     results = cursor.fetchall()
 
