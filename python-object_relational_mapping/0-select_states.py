@@ -6,6 +6,7 @@ import MySQLdb
 import sys
 
 def list_states(username, password, database_name):
+    """list states in hbtn_0e_0_usa database"""
     db = MySQLdb.connect(host="localhost", user=username, passwd=password,
     db=database_name)
 
