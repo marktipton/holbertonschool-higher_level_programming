@@ -18,10 +18,12 @@ def list_states(username, password, database_name):
 
     session = Session()
 
-    first_states = session.query(State).order_by(State.id).first()
+    first_state = session.query(State).order_by(State.id).first()
 
-    for state in states:
-        print(f"{state.id}: {state.name}")
+    if first_state:
+        print(f"{first_state.id}: {first_state.name}")
+    else:
+        print("Nothing")
 
     session.close()
 
