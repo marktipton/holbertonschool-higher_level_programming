@@ -18,7 +18,8 @@ def list_states(username, password, database_name):
 
     session = Session()
 
-    session.add(Louisiana)
+    new_state = State(name="Louisiana")
+    session.add(new_state)
     session.commit()
 
     states = session.query(State).order_by(State.id)
