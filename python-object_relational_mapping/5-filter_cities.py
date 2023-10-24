@@ -21,7 +21,7 @@ def list_cities(username, password, database_name, state_name):
     cursor = db.cursor()
     # Execute SQL Query
     cursor.execute("""
-        SELECT cities.id, cities.name
+        SELECT cities.name
         FROM cities
         JOIN states ON cities.state_id = states.id
         WHERE states.name LIKE BINARY '{}'
@@ -30,8 +30,9 @@ def list_cities(username, password, database_name, state_name):
 
     results = cursor.fetchall()
 
-    for city in results:
-        print(city)
+    cities = [city[0] for city in results]
+    cities_string = ', '.join(cities)
+    print(cities_string)
 
     cursor.close()
     db.close()
