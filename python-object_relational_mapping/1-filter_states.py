@@ -5,6 +5,7 @@
 import MySQLdb
 import sys
 
+
 def list_states_N(username, password, database_name):
     """list states in hbtn_0e_0_usa database"""
     db = MySQLdb.connect(
@@ -31,6 +32,7 @@ def list_states_N(username, password, database_name):
 
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     username = sys.argv[1]
