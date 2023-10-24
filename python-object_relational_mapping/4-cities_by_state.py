@@ -7,6 +7,7 @@ Lists all cities from database hbtn_0e_4_usa
 import MySQLdb
 import sys
 
+
 def list_cities(username, password, database_name):
     """Lists all cities from the database hbtn0e_4_usa"""
     db = MySQLdb.connect(
@@ -32,6 +33,7 @@ def list_cities(username, password, database_name):
 
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     username = sys.argv[1]
