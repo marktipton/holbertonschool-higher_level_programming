@@ -23,6 +23,7 @@ def list_cities(username, password, database_name):
     cursor.execute("""
         SELECT *
         FROM cities
+        JOIN states ON cities.state_id = states.id
         ORDER BY cities.id
     """)
 
