@@ -5,9 +5,9 @@
 import MySQLdb
 import sys
 
-def list_states(username, password, database_name):
+def list_states(username, password, database_name, host, port):
     """list states in hbtn_0e_0_usa database"""
-    db = MySQLdb.connect(host="localhost", user=username, passwd=password,
+    db = MySQLdb.connect(host=host, port=port, user=username, passwd=password,
     db=database_name)
 
     cursor = db.cursor()
@@ -26,4 +26,6 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
-    list_states(username, password, database_name)
+    host = 'localhost'
+    port = 3306
+    list_states(username, password, database_name, host, port)
