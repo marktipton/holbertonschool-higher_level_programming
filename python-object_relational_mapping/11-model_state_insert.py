@@ -22,10 +22,7 @@ def list_states(username, password, database_name):
     session.add(new_state)
     session.commit()
 
-    states = session.query(State).order_by(State.id)
-
-    for state in states:
-        print(f"{state.id}: {state.name}")
+    print(new_state.id)
 
     session.close()
 
