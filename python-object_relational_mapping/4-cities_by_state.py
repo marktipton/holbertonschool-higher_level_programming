@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-takes in an argument and displays all values in the states table of
-hbtn_0e_0_usa where name matches the argument.
+Lists all cities from database hbtn_0e_4_usa
 """
 
 
@@ -9,6 +8,7 @@ import MySQLdb
 import sys
 
 def list_cities(username, password, database_name):
+    """Lists all cities from the database hbtn0e_4_usa"""
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
