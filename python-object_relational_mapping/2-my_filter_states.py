@@ -8,6 +8,7 @@ hbtn_0e_0_usa where name matches the argument.
 import MySQLdb
 import sys
 
+
 def list_states_Match(username, password, database_name, state_searched):
     db = MySQLdb.connect(
         host="localhost",
@@ -33,6 +34,7 @@ def list_states_Match(username, password, database_name, state_searched):
 
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     username = sys.argv[1]
