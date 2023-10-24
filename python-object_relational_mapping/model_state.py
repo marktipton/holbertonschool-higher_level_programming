@@ -1,23 +1,16 @@
 #!/usr/bin/python3
 """
-Lists all cities from database hbtn_0e_4_usa
+connect to database using sqlalchemy
 """
-
-
-import SQLAlchemy
-
-engine = create_engine(
-                    'mysql://username:password@localhost:3306/database_name'
-                )
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
 
 class State(Base):
+    """Inherits from Base connects to Mysql"""
     __tablename__ = 'states'
 
     id = Column(Integer, primary_key=True, nullable=False, unique=True)
     name = Column(String(128), nullable=False)
-
-
-Base.metadata.create_all(engine)
