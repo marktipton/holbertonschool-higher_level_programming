@@ -21,7 +21,7 @@ def list_states_N(username, password, database_name):
         SELECT *
         FROM states
         WHERE name LIKE 'N%'
-        ORDER BY id
+        ORDER BY states.id
     """)
 
     results = cursor.fetchall()
@@ -36,4 +36,4 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
-    list_states(username, password, database_name)
+    list_states_N(username, password, database_name)
