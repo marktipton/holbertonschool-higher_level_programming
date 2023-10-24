@@ -21,7 +21,7 @@ def list_states_N(username, password, database_name):
     cursor.execute("""
         SELECT *
         FROM states
-        WHERE name LIKE 'N%'
+        WHERE name LIKE BINARY 'N%'
         ORDER BY states.id
     """)
 
