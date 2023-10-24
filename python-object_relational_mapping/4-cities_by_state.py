@@ -21,7 +21,7 @@ def list_cities(username, password, database_name):
     cursor = db.cursor()
     # Execute SQL Query
     cursor.execute("""
-        SELECT *
+        SELECT cities.id, cities.name, states.name
         FROM cities
         JOIN states ON cities.state_id = states.id
         ORDER BY cities.id
