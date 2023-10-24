@@ -20,7 +20,7 @@ def list_states(username, password, database_name, state_searched):
 
     state = session.query(State)\
                     .filter(State.name == state_searched)\
-                    .order_by(State.id)
+                    .first()
 
     if state:
         print(state.id)
