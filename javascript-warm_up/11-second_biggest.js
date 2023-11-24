@@ -10,8 +10,9 @@ if (!args[3]) {
     // parseInt(args[i]);
     // console.log(args[i]);
     if (args[i] > greatest) {
-      greatest === null ?
-      second = parseInt(args[i]) : second = parseInt(greatest);
+      greatest === null
+        ? second = parseInt(args[i])
+        : second = parseInt(greatest);
       greatest = parseInt(args[i]);
       // console.log(second, greatest);
     } else if (args[i] > second) {
