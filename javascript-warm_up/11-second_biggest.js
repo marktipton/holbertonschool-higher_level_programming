@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const args = process.argv;
 // console.log(args.length);
-if (!args[4]) {
+if (!args[3]) {
   console.log(0);
 } else {
   let greatest = null;
@@ -10,9 +10,12 @@ if (!args[4]) {
     // parseInt(args[i]);
     // console.log(args[i]);
     if (args[i] > greatest) {
-      second = parseInt(greatest);
+      greatest === null ?
+      second = parseInt(args[i]) : second = parseInt(greatest);
       greatest = parseInt(args[i]);
       // console.log(second, greatest);
+    } else if (args[i] > second) {
+      second = parseInt(args[i]);
     }
     // } else if (args[i] > second) {
     //   second = args[i];
