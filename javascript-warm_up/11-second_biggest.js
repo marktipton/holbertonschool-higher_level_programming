@@ -1,18 +1,23 @@
 #!/usr/bin/node
 const args = process.argv;
 // console.log(args.length);
+let greatest = null;
+let second = null;
 if (!args[3]) {
   console.log(0);
 } else {
-  let greatest = null;
-  let second = null;
-  for (let i = 2; i < args.length; i++) {
+  if (args[2] > args[3]) {
+    greatest = parseInt(args[2]);
+    second = parseInt(args[3]);
+  } else {
+    greatest = parseInt(args[3]);
+    second = parseInt(args[2]);
+  }
+  for (let i = 4; i < args.length; i++) {
     // parseInt(args[i]);
     // console.log(args[i]);
     if (args[i] > greatest) {
-      greatest === null
-        ? second = parseInt(args[i])
-        : second = parseInt(greatest);
+      second = parseInt(greatest);
       greatest = parseInt(args[i]);
       // console.log(second, greatest);
     } else if (args[i] > second) {
