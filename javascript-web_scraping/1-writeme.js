@@ -7,4 +7,4 @@ const writeString = args[3];
 
 fs.writeFile(fileName, writeString, 'utf-8', (err) => {
   if (err) throw err;
-})
+});
