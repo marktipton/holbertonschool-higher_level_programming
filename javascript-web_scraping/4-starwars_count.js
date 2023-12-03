@@ -10,7 +10,13 @@ request(apiUrl, (error, request, body) => {
   } else {
     const filmData = JSON.parse(body);
     let count = 0;
-    console.log(filmData);
+    for (const film in filmData.results) {
+      const characterList = filmData.results[film].characters;
+      for (const character in characterList) {
+        if (characterList[character] === wedgeUrl) count++;
+      }
+    }
+    console.log(count);
     // for (const url of filmData.results.characters) {
     //   if (url === wedgeUrl) {
     //     count++;
