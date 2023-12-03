@@ -1,6 +1,5 @@
 #!/usr/bin/node
 const request = require('request');
-const wedgeUrl = 'https://swapi-api.hbtn.io/api/people/18/';
 const wedgeId = '18';
 const apiUrl = process.argv[2];
 
@@ -18,11 +17,5 @@ request(apiUrl, (error, request, body) => {
       }
     }
     console.log(count);
-    // for (const url of filmData.results.characters) {
-    //   if (url === wedgeUrl) {
-    //     count++;
-    //   }
-    // }
-    // console.log(count);
   }
 });
