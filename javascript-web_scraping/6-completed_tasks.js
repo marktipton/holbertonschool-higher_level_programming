@@ -2,7 +2,7 @@
 const request = require('request');
 
 const apiUrl = process.argv[2];
-let dictCompleted = {};
+const dictCompleted = {};
 request(apiUrl, (error, response, body) => {
   if (error) {
     console.error('Error', error.message);
@@ -11,7 +11,7 @@ request(apiUrl, (error, response, body) => {
     const taskData = JSON.parse(body);
     // console.log(taskData);
     for (const index in taskData) {
-      let task = taskData[index];
+      const task = taskData[index];
       if (task.completed === true) {
         if (dictCompleted[task.userId] === undefined) {
           dictCompleted[task.userId] = 1;
