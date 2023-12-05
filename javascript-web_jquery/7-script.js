@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-apiUrl = 'https://swapi-api.hbtn.io/api/people/5/?format=json';
+const apiUrl = 'https://swapi-api.hbtn.io/api/people/5/?format=json';
 
 $.ajax({
   url: apiUrl,
